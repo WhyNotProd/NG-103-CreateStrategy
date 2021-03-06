@@ -10,7 +10,7 @@ const rootReducer = combineReducers({
   user: userReducer,
   social: socialPostsReducer,
   heatmap: heatMapReducer,
-  trend: trendReducer
+  trend: trendReducer,
 });
 
 export type RootState = ReturnType<typeof rootReducer>;

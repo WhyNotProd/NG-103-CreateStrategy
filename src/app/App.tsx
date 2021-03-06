@@ -1,23 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import { Router } from 'react-router-dom';
-import NavRouter from '../navigation/router';
-import ReactGA from 'react-ga';
+import React from 'react';
 import { Provider } from 'react-redux';
+import NavRouter from '../navigation/router';
 import store from '../store';
-import AppContext from './AppContext';
 import Auth from '../auth/Auth';
 
 // interface AppProps {}
 
-const App = ({}: any) => {
-
-  return (
-    <Provider store={store}>
-      <Auth>
-        <NavRouter />
-      </Auth>
-    </Provider>
-  );
-}
+const App = ({}: any) => (
+  <Provider store={store}>
+    <Auth>
+      <NavRouter />
+    </Auth>
+  </Provider>
+);
 
 export default App;
