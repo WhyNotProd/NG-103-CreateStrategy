@@ -20,7 +20,7 @@ export const getHeatMap = createAsyncThunk('heatmap/getHeatMap', async () => {
 	return response.data;
 });
 
-const postsSlice = createSlice({
+const heatMapSlice = createSlice({
 	name: 'heatmap',
 	initialState,
 	reducers: {
@@ -40,5 +40,5 @@ const postsSlice = createSlice({
   },
 });
 
-export default postsSlice.reducer;
+export default heatMapSlice.reducer;
 

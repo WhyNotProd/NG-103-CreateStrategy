@@ -5,7 +5,7 @@ import {
   PayloadAction
 } from '@reduxjs/toolkit';
 import axios from 'axios';
-import {apiFetchAssetById, apiFetchAssets} from '../../api/assetApi';
+import {fetchAssetById, fetchAssets} from '../../api/assetApi';
 import { IAsset } from '../../interfaces/asset.interface';
 
   interface IAssetState {
@@ -19,55 +19,35 @@ import { IAsset } from '../../interfaces/asset.interface';
   }
 
   const initialState = {
-    isLoading: false,
+    loading: false,
     assets: [],
-    error: null,
+    errors: '',
   };
   
-  const startLoading = (state:IAssetState) => {
-    state.isLoading = true;
-  };
+  export const getAssets = createAsyncThunk('strategy/assets/getAssets', async () => {
+    const { response } = await fetchAssets();
   
-  const loadingFailed = (state:IAssetState, action:PayloadAction<string>) => {
-    state.isLoading = false;
-    state.error = action.payload;
-  };
-
-  // export const fetchAssets = createAsyncThunk(('assets/fetchAssets', async () => {
-  //   const response = await apiFetchAssets ();
-  //   return response;
-  // });
-  
-  const assetsSlice = createSlice ({
-    name: 'asset',
-    initialState,
-    reducers: {
-      getAssetStart: startLoading,
-      getAssetSuccess (state, {payload}) {
-        // const {stock} = payload;
-        state.isLoading = false;
-        state.assets = payload;
-        state.error = null;
-      },
-      getAssetFailure: loadingFailed,
-    },
+    return response.data;
   });
   
-  export const {
-    getAssetStart,
-    getAssetSuccess,
-    getAssetFailure,
-  } = assetsSlice.actions;
-  
-  export default assetsSlice.reducer;
-  
-  // export const fetchAssets = input => async dispatch => {
-  //   try {
-  //     dispatch (getAssetStart ());
-  //     const {stock} = await apiFetchAssetById (input);
-  //     dispatch (getAssetSuccess (stock.data));
-  //   } catch (err) {
-  //     dispatch (getAssetFailure (err.toString ()));
-  //   }
-  // };
-  
+  const assetSlice = createSlice({
+    name: 'strategy/assets',
+    initialState,
+    reducers: {
+    },
+    extraReducers: {
+      [getAssets.pending.toString()]: (state) => {
+        state.loading = true;
+      },
+      [getAssets.fulfilled.toString()]: (state, { payload }) => {
+        state.assets = payload;
+        state.loading = false;
+      },
+      [getAssets.rejected.toString()]: (state, { payload }) => {
+        state.loading = false;
+        state.errors = payload;
+      },
+    },
+  });
+
+  export default assetSlice.reducer;

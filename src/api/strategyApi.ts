@@ -1,13 +1,13 @@
 import axios from 'axios';
-import { IAsset } from '../interfaces/asset.interface';
+// import { IAsset } from '../interfaces/asset.interface';
 
 const baseURL =  import.meta.env.SNOWPACK_PUBLIC_SNOWPACK_PUBLIC_REACT_APP_API_URL;
 
-export const fetchAssets = async () => {
-    const url = `${baseURL}/api/AssetManagement/0`;
+export const fetchStrategies = async () => {
+    const url = `${baseURL}/api/PortfolioManagement/0?UserID=1`;
   
     return await axios
-      .get<IAsset>(url)
+      .get(url)
       .then (response => {
         return {
           response,
@@ -18,11 +18,11 @@ export const fetchAssets = async () => {
       });
   };
 
-export const fetchAssetById = async (id:number) => {
-    const url = `${baseURL}/api/AssetManagement/${id}`;
+export const fetchStrategyById = async (id:number) => {
+    const url = `${baseURL}/api/PortfolioManagement/${id}`;
   
     return await axios
-      .get<IAsset>(url)
+      .get(url)
       .then (response => {
         return {
           response,
