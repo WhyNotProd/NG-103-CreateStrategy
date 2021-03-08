@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { loadPosts } from './socialPostsSlice';
 import Page from './Page';
-import { useAppDispatch } from './store';
 
 const Social = () => {
-  const dispatch = useAppDispatch();
+  const dispatch = useDispatch();
   useEffect(() => {
     dispatch(loadPosts());
   }, [dispatch]);
