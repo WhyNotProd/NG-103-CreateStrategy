@@ -10,7 +10,8 @@ export const StyledHeader = styled.div<IProps>`
   left: 0;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: center;
   background: ${({ theme }) => theme.palette.common.white};
   height: 52px;
   text-align: left;
@@ -20,8 +21,8 @@ export const StyledHeader = styled.div<IProps>`
 
 export const StyledLogo = styled.div`
   display: flex;
-  height: 40px
+  height: 40px;
   justify-content: center;
   align-items: center;
-  width: 136px;
+  width: 100%;
 `;

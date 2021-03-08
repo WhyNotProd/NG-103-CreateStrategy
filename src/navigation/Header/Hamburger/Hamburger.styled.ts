@@ -7,13 +7,9 @@ interface IProps {
 }
 
 export const StyledHamburger = styled(MenuAltLeft)<IProps>`
-  position: absolute;
-  top: 5%;
-  left: 2rem;
   display: flex;
   z-index: 10;
   cursor: pointer;
-  justify-content: space-around;
   width: 2rem;
   height: 2rem;
   background: transparent;
@@ -21,13 +17,9 @@ export const StyledHamburger = styled(MenuAltLeft)<IProps>`
 `;
 
 export const StyledHamburgerClose = styled(CloseCircleOutline)<IProps>`
-  position: absolute;
-  top: 5%;
-  left: 2rem;
   display: flex;
   z-index: 10;
   cursor: pointer;
-  justify-content: space-around;
   width: 2rem;
   height: 2rem;
   background: transparent;
