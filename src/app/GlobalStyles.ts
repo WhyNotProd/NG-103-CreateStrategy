@@ -84,6 +84,34 @@ export const Button = styled.button<IProps>`
     }
   }}
 `;
+
+export const IconButton = styled.button`
+  flex: 0 0 auto;
+  color: rgba(0, 0, 0, 0.54);
+  padding: 12px;
+  overflow: visible;
+  text-align: center;
+  transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-radius: 50%;
+  position: relative;
+  align-items: center;
+  user-select: none;
+  border: 0;
+  cursor: pointer;
+  margin: 0;
+  display: inline-flex;
+  outline: 0;
+  vertical-align: middle;
+  -moz-appearance: none;
+  justify-content: center;
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  &:hover { {
+    background-color: rgba(0, 0, 0, 0.04);
+  }
+`;
 export const H1 = styled.h1<IProps>`
   ${(props) => {
     switch (props.variant) {
@@ -124,34 +152,79 @@ export const H3 = styled.h3<IProps>`
 `;
 export const Card = styled.div`
   clear: both;
-  box-shadow: 0px 10px 13px -6px rgb(0 0 0 / 20%), 0px 20px 31px 3px rgb(0 0 0 
-  / 14%), 0px 8px 38px 7px rgb(0 0 0 / 12%);
-  padding: 15px 50px;
+  box-shadow: 0 3px 6px 3px rgb(0 0 0 / 20%);
   border-radius: ${(props) => props.theme.borderRadius};
+  margin-bottom: 30px;
 `;
-export const Container = styled.div`
-  width: 560px;
-  margin: 0 auto;
+
+export const FlexBox = styled.div`
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
 `;
-export const FloatLeftBlock = styled.div`
-  float: left;
+
+export const GridList = styled.ul`
+  flex-wrap: nowrap;
+  transform: translateZ(0);
+  display: flex;
+  list-style: none;
+  overflow-y: auto;
 `;
-export const FloatRightBlock = styled.div`
-  float: right;
+
+export const GridLi = styled.li`
+  box-sizing: border-box;
+  flex-shrink: 0;
 `;
-export const Div33 = styled.div`
-  width: 33%;
+
+export const Paper = styled.div`
+  border-radius: ${(props) => props.theme.borderRadius};
+  box-shadow: 0 3px 6px 3px rgb(0 0 0 / 20%);
+  max-width: 200px;
+  max-height: 150px;
+  margin-left: 16px;
+  margin-bottom: 10px;
+  padding: 15px;
+  width: 205px;
+  height: 165px;
 `;
-export const LeftBackground = styled.div`
-  position: absolute;
-  bottom: 0;
+
+export const Drawer = styled.div`
+  opacity: 1;
+  transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  position: fixed;
+  z-index: 1300;
+  inset: 0;
+  top: 0;
   left: 0;
-`;
-export const RightBackground = styled.div`
-  position: absolute;
-  bottom: 0;
   right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-tap-highlight-color: transparent;
 `;
-export const ClearBlock = styled.div`
-  clear: both;
+export const DrawerContent = styled.div`
+  transform: none;
+  transition: transform 225ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  left: auto;
+  right: 0;
+  top: 0;
+  flex: 1 0 auto;
+  height: 100%;
+  display: flex;
+  outline: 0;
+  z-index: 1200;
+  position: fixed;
+  overflow-y: auto;
+  flex-direction: column;
+  -webkit-overflow-scrolling: touch;
+  box-shadow: 0px 8px 10px -5px rgb(0 0 0 / 20%), 0px 16px 24px 2px 
+  rgb(0 0 0 / 14%), 0px 6px 30px 5px rgb(0 0 0 / 12%);
+  background-color: #FDFFFC;
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
 `;

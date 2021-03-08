@@ -3,6 +3,8 @@ import {
   Route, Switch, BrowserRouter as Router,
 } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
+import { configureStore } from '@reduxjs/toolkit';
+import { Provider } from 'react-redux';
 import Home from '../features/home';
 import Social from '../features/social';
 import HeatMap from '../features/heatmap';

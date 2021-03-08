@@ -1,7 +1,7 @@
 import { DefaultTheme } from 'styled-components';
 
 const shutsTheme: DefaultTheme = {
-  borderRadius: '4px',
+  borderRadius: '2px',
   palette: {
     common: {
       black: '#000000',
