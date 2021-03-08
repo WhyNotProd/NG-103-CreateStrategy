@@ -8,6 +8,55 @@ export enum VARIANT {
 interface IProps {
   variant?: VARIANT
 }
+
+import { createGlobalStyle } from 'styled-components';
+
+const customMediaQuery = (maxWidth: number) =>
+  `@media (max-width: ${maxWidth}px)`;
+
+const media = {
+  custom: customMediaQuery,
+  desktop: customMediaQuery(922),
+  tablet: customMediaQuery(768),
+  phone: customMediaQuery(576),
+};
+
+export const GlobalStyles = createGlobalStyle`
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+  *, *::after, *::before {
+    box-sizing: border-box;
+  }
+  #root {
+    width: 100%;
+    height: 100vh;
+  }
+  body {
+    align-items: center;
+    background: #ffffff;
+    color: #129297;
+    display: flex;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    height: 100vh;
+    justify-content: center;
+    text-rendering: optimizeLegibility;
+    width: 100%;
+    ${media.phone} {
+      //custom phone styling
+      font-size: 25px; //test
+    }
+    ${media.tablet} {
+      //custom tablet styling
+
+    }
+    ${media.desktop} {
+      //custom desktop styling
+    }
+  }
+  `
+
 export const Button = styled.button<IProps>`
   margin: 8px;
   border-radius: ${(props) => props.theme.borderRadius};

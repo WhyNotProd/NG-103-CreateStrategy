@@ -16,5 +16,12 @@ const shutsTheme: DefaultTheme = {
       contrastText: '#ffffff',
     },
   },
+  breakPoints: {
+    // xs: '0px',
+    sm: '576px',
+    md: '768px',
+    lg: '922px', 
+    // xl: '1920px',
+  }
 };
 export default shutsTheme;
