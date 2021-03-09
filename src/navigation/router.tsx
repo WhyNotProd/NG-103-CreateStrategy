@@ -8,14 +8,14 @@ import Social from '../features/social';
 import HeatMap from '../features/heatmap';
 import Trends from '../features/trends';
 import shutsTheme from '../app/theme';
+import Header from './Header';
 
 const Routes = (): any => (
   <ThemeProvider theme={shutsTheme}>
     <Router>
+    <Header />
       <Switch>
-        <Route path="/social">
-          <Social />
-        </Route>
+        <Route path="/social"><Social /></Route>
         <Route path="/trends"><Trends /></Route>
         <Route path="/heatmap"><HeatMap /></Route>
         <Route exact path="/"><Home /></Route>
