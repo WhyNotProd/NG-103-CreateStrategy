@@ -16,10 +16,11 @@ import {
   GridList, Paper, GridLi, IconButton, VARIANT,
 } from '../../app/GlobalStyles';
 import {
-  addPost, likePost, likePostR, unlikePostR, postsSelector, unlikePost,
+  addPost, likePost, likePostR, unlikePostR, unlikePost,
 } from './socialPostsSlice';
 import { ISocialPost } from '../../interfaces/socialPost.interface';
 import PostForm from './components/PostForm';
+import RootState from '../../store/rootReducer';
 
 export interface CreatePayload {
   userID: number,
@@ -28,7 +29,9 @@ export interface CreatePayload {
 }
 
 const Page = (): any => {
-  const { posts, loading } = useSelector(postsSelector);
+  const { posts, loading } = useSelector(
+    (state: RootState) => state.social,
+  );
   const [userName] = useState<string>('Vikhyat Puri');
   const [toggle, setToggle] = useState<boolean>(false);
   if (loading === true) {

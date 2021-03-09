@@ -1,5 +1,6 @@
 import { User } from './user.interface';
 import { IAsset } from './asset.interface';
+import { ISocialPost } from './socialPost.interface';
 
 type RootState = {
     auth: {
@@ -9,4 +10,3 @@ type RootState = {
     user: User | null;
     assets: IAsset[] | null;
   }
-  

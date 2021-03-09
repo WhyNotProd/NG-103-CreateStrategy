@@ -1,9 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { AppThunk } from './store';
 import {
   fetchPosts, createPost, likeUserPost, unlikeUserPost,
 } from '../../api/socialApi';
-import { RootState } from './slices';
 
 export interface SocialState {
   posts: object[],
@@ -57,16 +55,14 @@ export default postsSlice.reducer;
 
 export const { likePostR, unlikePostR } = postsSlice.actions;
 
-export const addPost = (data: object): AppThunk => async () => {
+export const addPost = createAsyncThunk('social/posts/addPost', async (data: object) => {
   await createPost(data);
-};
+});
 
-export const likePost = (shareId: number): AppThunk => async () => {
+export const likePost = createAsyncThunk('social/posts/likePost', async (shareId: number) => {
   await likeUserPost(1, shareId);
-};
+});
 
-export const unlikePost = (shareId: number): AppThunk => async () => {
+export const unlikePost = createAsyncThunk('social/posts/unlikePost', async (shareId: number) => {
   await unlikeUserPost(1, shareId);
-};
-
-export const postsSelector = (state: RootState) => state.posts;
+});
