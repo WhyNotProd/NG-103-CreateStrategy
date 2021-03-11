@@ -20,6 +20,10 @@ const Menu = ({open}) => {
         <span role="img" aria-label="share"><GraphTrend /></span>
         <p>Share</p>
       </NavLink>
+      <NavLink exact activeClassName="active" to="/strategy">
+        <span role="img" aria-label="Strategy"><GraphTrend /></span>
+        <p>Strategy</p>
+      </NavLink>
     </StyledMenu>
   )
 }

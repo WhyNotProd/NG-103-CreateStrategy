@@ -7,6 +7,7 @@ import Home from '../features/home';
 import Social from '../features/social';
 import HeatMap from '../features/heatmap';
 import Trends from '../features/trends';
+import Strategy from '../features/strategy';
 import shutsTheme from '../app/theme';
 import Header from './Header';
 
@@ -18,6 +19,7 @@ const Routes = (): any => (
         <Route path="/social"><Social /></Route>
         <Route path="/trends"><Trends /></Route>
         <Route path="/heatmap"><HeatMap /></Route>
+        <Route path="/strategy"><Strategy /></Route>
         <Route exact path="/"><Home /></Route>
       </Switch>
     </Router>
