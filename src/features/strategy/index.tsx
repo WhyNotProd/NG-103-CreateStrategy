@@ -3,6 +3,9 @@ import { useDispatch } from 'react-redux';
 import { useParams } from "react-router-dom";
 import { getStrategies } from './strategySlice';
 import { getAssets } from './assetSlice';
+import CreateStrategy from './create';
+import  Header  from '../header';
+import './strategyStyle.css';
 
 const Strategy = () => {
   const dispatch = useDispatch();
@@ -14,10 +17,10 @@ const Strategy = () => {
   }, [dispatch]);
 
   return (
-    <div>
-      Strategy Home Page if id is passed in load the strategy page for id:{params.id ? params.id : 0},
-     if not load the strategy home page
-     </div>
+    <div className="strategy">
+      <Header />
+      <CreateStrategy />
+    </div>
   );
 };
 
