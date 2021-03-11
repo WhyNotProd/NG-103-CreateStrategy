@@ -66,7 +66,7 @@ const CreateStrategy = () => {
         </div>
           </div>
           <div className="create-stategy-right">
-            <img src="/assets/strategy/strategy-1.png" />
+            <img src="/assets/images/strategy/strategy-1.png" />
           </div>
         </div>
   );

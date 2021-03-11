@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 import { getStrategies } from './strategySlice';
 import { getAssets } from './assetSlice';
 import CreateStrategy from './create';
-import  Header  from '../header';
 import './strategyStyle.css';
 
 const Strategy = () => {
@@ -18,7 +17,6 @@ const Strategy = () => {
 
   return (
     <div className="strategy">
-      <Header />
       <CreateStrategy />
     </div>
   );
