@@ -95,6 +95,7 @@
     letter-spacing: 0px;
     color: #FFFFFF;
     text-transform: uppercase;
+    cursor: pointer;
 }
 
 .createStrategyForm label {
