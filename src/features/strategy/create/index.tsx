@@ -22,7 +22,7 @@ const CreateStrategy = () => {
             <form className="createStrategyForm">
               <div className="formRow">
                 <label htmlFor="addStrategy">Select a Strategy</label>
-                <button className="btnAddStrategy" id="addStrategy" name="addStrategy" value="Add a strategy">Add a strategy</button>
+                <button className="btnAddStrategy" id="addStrategy" name="addStrategy" value="Add a strategy" onClick={()=>console.log()}>Add a strategy</button>
               </div>
               <div className="formRow">
                 <label htmlFor="strategyName">Strategy Name</label>
