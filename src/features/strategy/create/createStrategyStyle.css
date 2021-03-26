@@ -1,117 +1,280 @@
-.create-stategy {
-    background-color: #FFFFFF;
-    width: 100%;
-    display: block;
-    margin: 0;
-    padding: 0;
+
+@media (max-width: 767px) {
+    .createStategy {
+        background-color: #ffffff;
+        width: 100%;
+        display: block;
+        margin:  auto;
+        padding: 0;
+    }
+
+    .create-stategy-left {
+        width: 100%;
+        float: left;
+        margin: 35px;
+    }
+
+    .create-stategy-right {
+        width: 100%;
+        float: right;
+    }
+
+    .create-stategy-right img {
+        width: 0%;
+    }
+
+    .create-stategy-left .header-section  {
+       margin: 0 auto;
+        padding-top: 0;
+    }
+
+    .create-stategy-left .header-section .header-section-heading {
+        margin: 0px;
+        text-align: left;
+        font-size: 38px;
+        line-height: 43px;
+        font-family: Georgia, sans-serif;
+        letter-spacing: 0;
+        color: #010D0D;
+    }
+
+    .create-stategy-left .header-section .header-section-text {
+        margin-top: 10px;
+        width: 90%;
+        text-align: left;
+        font-weight: 500;
+        font-family: "Arial", sans-serif;
+        font-size: 16px;
+        line-height: 18px;
+        letter-spacing: 0px;
+        color: #129297;
+    }
+
+    .container {
+        width: 80%;
+        border-radius: 0;
+        background-color: #ffffff;
+        padding-top: 30px;
+        text-align: left;
+
+        font-weight: 500;
+        font-family: "Roboto", sans-serif;
+        font-size: 14px;
+        line-height: 19px;
+        letter-spacing: 0px;
+        color: #010D0D;
+    }
+
+    .createStrategyForm .formRow {
+        padding: 10px 0;
+    }
+    .createStrategyForm input[type=text], .createStrategyForm select, .createStrategyForm .inputStrategyCapital {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: block;
+        border-radius: 0px;
+        box-sizing: border-box;
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        border: 1px solid #129297;
+    }
+
+
+    .createStrategyForm input[type=submit] {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 0px;
+        cursor: pointer;
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        border: 1px solid #129297;
+    }
+
+    .createStrategyForm input[type=submit]:hover {
+        background-color: #45a049;
+    }
+
+    .createStrategyForm .btnAddStrategy {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: block;
+        border: 1px solid #ccc;
+        border-radius: 0px;
+        box-sizing: border-box;
+        background: #129297 0% 0% no-repeat padding-box;
+        /*font: normal normal bold 12px/16px Roboto;*/
+        font-weight: 500;
+        font-family: "Roboto", sans-serif;
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: 0px;
+        color: #FFFFFF;
+        text-transform: uppercase;
+    }
+
+    .createStrategyForm label {
+        text-align: left;
+        /*font: normal normal medium 14px/19px Roboto;*/
+        font-weight: 500;
+        font-family: "Roboto", sans-serif;
+        font-size: 14px;
+        line-height: 19px;
+        letter-spacing: 0px;
+        color: #010D0D;
+        font-weight: bold;
+    }
+    .createStrategyForm #startDate, .createStrategyForm #endDate {
+        width: 45%;
+        padding: 12px 11px;
+        margin: 8px 0;
+        display: block;
+        border-radius: 0px;
+        box-sizing: border-box;
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        border: 1px solid #129297;
+        color: #129297;
+    }
 }
 
-.create-stategy-left {
-    width: 50%;
-    float: left;
-}
 
-.create-stategy-right {
-    width: 50%;
-    float: right;
-}
+@media (min-width: 768px) {
+    .createStategy {
+        background-color: #FFFFFF;
+        width: 100%;
+        display: block;
+        margin: 0;
+        padding: 0;
+    }
 
-.create-stategy-right img {
-    width: 100%;
-}
+    .create-stategy-left {
+        width: 50%;
+        float: left;
+    }
 
-.create-stategy-left .header-section  {
-    padding-top: 100px;
-}
+    .create-stategy-right {
+        width: 50%;
+        float: right;
+    }
 
-.create-stategy-left .header-section .header-section-heading {
-    text-align: left;
-    font: normal normal normal 72px/82px Georgia;
-    letter-spacing: 0px;
-    color: #010D0D;
-}
+    .create-stategy-right img {
+        width: 100%;
+    }
 
-.create-stategy-left .header-section .header-section-text {
-    margin-top: 10px;
-    width: 80%;
-    text-align: left;
-    font: normal normal normal 28px/32px Arial;
-    letter-spacing: 0px;
-    color: #129297;
-}
-  
-.container {
-    width: 70%;
-    border-radius: 0;
-    background-color: #ffffff;
-    padding-top: 40px;
-    text-align: left;
-    font: normal normal medium 14px/19px Roboto;
-    letter-spacing: 0px;
-    color: #010D0D;
-}
+    .create-stategy-left .header-section  {
+        padding-top: 100px;
+    }
 
-.createStrategyForm .formRow {
-    padding: 5px 0;
-}
-.createStrategyForm input[type=text], .createStrategyForm select, .createStrategyForm .inputStrategyCapital {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: block;
-    border-radius: 0px;
-    box-sizing: border-box;
-    background: #FFFFFF 0% 0% no-repeat padding-box;
-    border: 1px solid #129297;
-}
+    .create-stategy-left .header-section .header-section-heading {
+        text-align: left;
+        font-size: 72px;
+        line-height: 82px;
+        font-family: Georgia, sans-serif;
+        letter-spacing: 0;
+        color: #010D0D;
+    }
 
-  
-.createStrategyForm input[type=submit] {
-    width: 100%;
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 0px;
-    cursor: pointer;
-    background: #FFFFFF 0% 0% no-repeat padding-box;
-    border: 1px solid #129297;
-}
-  
-.createStrategyForm input[type=submit]:hover {
-    background-color: #45a049;
-}
+    .create-stategy-left .header-section .header-section-text {
+        margin-top: 10px;
+        width: 80%;
+        text-align: left;
+        font-weight: 500;
+        font-family: "Arial", sans-serif;
+        font-size: 28px;
+        line-height: 32px;
+        letter-spacing: 0px;
+        color: #129297;
+    }
 
-.createStrategyForm .btnAddStrategy {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: block;
-    border: 1px solid #ccc;
-    border-radius: 0px;
-    box-sizing: border-box;
-    background: #129297 0% 0% no-repeat padding-box;
-    font: normal normal bold 12px/16px Roboto;
-    letter-spacing: 0px;
-    color: #FFFFFF;
-    text-transform: uppercase;
-}
+    .container {
+        width: 80%;
+        border-radius: 0;
+        background-color: #ffffff;
+        padding-top: 40px;
+        text-align: left;
+        /*font: normal normal medium 14px/19px Roboto;*/
+        font-weight: 500;
+        font-family: "Roboto", sans-serif;
+        font-size: 14px;
+        line-height: 19px;
+        letter-spacing: 0px;
+        color: #010D0D;
+    }
 
-.createStrategyForm label {
-    text-align: left;
-    font: normal normal medium 14px/19px Roboto;
-    letter-spacing: 0px;
-    color: #010D0D;
-    font-weight: bold;
-}
-.createStrategyForm #startDate, .createStrategyForm #endDate {
-    width: 45%;
-    padding: 12px 11px;
-    margin: 8px 0;
-    display: block;
-    border-radius: 0px;
-    box-sizing: border-box;
-    background: #FFFFFF 0% 0% no-repeat padding-box;
-    border: 1px solid #129297;
+    .createStrategyForm .formRow {
+        padding: 5px 0;
+
+    }
+    .createStrategyForm input[type=text], .createStrategyForm select, .createStrategyForm .inputStrategyCapital {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: block;
+        border-radius: 0px;
+        box-sizing: border-box;
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        border: 1px solid #129297;
+    }
+
+
+    .createStrategyForm input[type=submit] {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 0px;
+        cursor: pointer;
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        border: 1px solid #129297;
+    }
+
+    .createStrategyForm input[type=submit]:hover {
+        background-color: #45a049;
+    }
+
+    .createStrategyForm .btnAddStrategy {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: block;
+        border: 1px solid #ccc;
+        border-radius: 0px;
+        box-sizing: border-box;
+        background: #129297 0% 0% no-repeat padding-box;
+        /*font: normal normal bold 12px/16px Roboto;*/
+        font-weight: 500;
+        font-family: "Roboto", sans-serif;
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: 0px;
+        color: #FFFFFF;
+        text-transform: uppercase;
+    }
+
+    .createStrategyForm label {
+        text-align: left;
+        /*font: normal normal medium 14px/19px Roboto;*/
+        font-weight: 500;
+        font-family: "Roboto", sans-serif;
+        font-size: 14px;
+        line-height: 19px;
+        letter-spacing: 0px;
+        color: #010D0D;
+        font-weight: bold;
+    }
+    .createStrategyForm #startDate, .createStrategyForm #endDate {
+        width: 45%;
+        padding: 12px 11px;
+        margin: 8px 0;
+        display: block;
+        border-radius: 0px;
+        box-sizing: border-box;
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        border: 1px solid #129297;
+    }
 }
