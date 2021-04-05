@@ -10,6 +10,7 @@ const Strategy = () => {
   const dispatch = useDispatch();
   let params = useParams();
   console.log(params);
+
   useEffect(() => {
     dispatch(getStrategies());
     dispatch(getAssets());
