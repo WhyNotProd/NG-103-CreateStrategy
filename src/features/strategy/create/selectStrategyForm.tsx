@@ -2,32 +2,54 @@ import React, { useEffect } from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import './selectStrategyStyle.css';
 import { ArrowBack } from '@styled-icons/boxicons-regular/ArrowBack';
-import Select from 'react-select'
-import {RootState} from "../../../store/rootReducer";
+import Select from 'react-select';
 import {getStrategies} from "../strategySlice";
 
-const options = [
-	{ value: 'A - Agilent Technologies, Inc.', label: 'A - Agilent Technologies, Inc.' },
-	{ value: '100 VOO2', label: '100 VOO2' },
-	{ value: '80 - 20 VOO TLT', label: '80 - 20 VOO TLT' },
-	{ value: 'All-Weather/All-Seasons Portfolio...', label: 'All-Weather/All-Seasons' },
-	{ value: 'Accelerated Dual', label: 'Accelerated Dual' },
-	{ value: '100 VOO1', label: '100 VOO1' },
-	{ value: '80 - 20 VOO TLT', label: '80 - 20 VOO TLT' },
-	{ value: 'All-Weather/All', label: 'All-Weather/All' },
-	{ value: 'Accelerated Dual', label: 'Accelerated Dual' },
-	{ value: '100 VOO', label: '100 VOO' },
-	{ value: '80 - 20 VOO TLT', label: '80 - 20 VOO TLT' },
-	{ value: 'All-Weather/All-Seasons Portfolio', label: 'All-Weather/All-Seasons Portfolio' },
-	{ value: 'Accelerated Dual Momentum', label: 'Accelerated Dual Momentum' },
-]
+interface strategyItem {
+	strategy: {
+		createdDate: string;
+		id: any;
+		isActive: boolean;
+		isBenchmark: boolean;
+		isShared: boolean;
+		isStatic: boolean;
+		isUserEquityAccount: boolean;
+		rank: any;
+		strategyID: any;
+		strategyName: string;
+		updatedBy: string;
+		updatedDate: string;
+		userID: any;
+	};
+}
+
+interface strategySelect {
+	strategy: {
+		strategies: strategyItem[];
+	}
+}
 
 const SelectStrategyForm = (props) => {
+
+	const options1: any = useSelector<strategySelect>((state) => {
+		return state.strategy.strategies;
+	})
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-		dispatch(getStrategies());
+		dispatch(getStrategies)
 	}, [dispatch]);
+
+	const onChange = (event) => {
+		let strategy;
+		if (event) {
+			strategy = options1.filter((s) => s.strategy.id === event.id);
+			if (strategy.length > 0) {
+				strategy = strategy[0].strategy
+			}
+		}
+		props.onStrategySelect(strategy);
+	};
 
 	return (
 		<div className="select-stategy">
@@ -39,13 +61,18 @@ const SelectStrategyForm = (props) => {
 				<div className="header-section">
 					<div className="header-section-heading"> Select a Strategy</div>
 					<div className="select-stategy-dropdown">
-						<Select 
-							options={options} 
-							className='react-select-container' 
+						<Select
+							options={options1.map((item)=>{
+								return item.strategy;
+							})}
+							getOptionLabel ={(option)=>option.strategyName}
+							getOptionValue ={(option)=>option.strategyName}
+							className='react-select-container'
 							classNamePrefix="react-select"
 							isClearable="true"
 							isSearchable="true"
 							name="color"
+							onChange={onChange}
 						/>
 					</div>
 				</div>

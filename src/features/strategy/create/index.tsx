@@ -1,24 +1,27 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import CurrencyInput from 'react-currency-input-field';
 import CreateStrategy from './createStrategyForm';
 import SelectStrategy from './selectStrategyForm';
 
 const CreateStrategyForm = () => {
   const [selectStrategyStatus, setStrategyStatus] = useState(false);
+  const [strategy, setStrategy] = useState(false);
   const toggleView = () => {setStrategyStatus(!selectStrategyStatus)};
-  
+
+  const onStrategySelect = (data) => {
+      setStrategy(data);
+  };
+
   // setSta
   if (!selectStrategyStatus) {
     return (
       <div className="createStrategyPage">
-        <CreateStrategy  toggleFun={()=>toggleView()} />
+        <CreateStrategy strategy={strategy} toggleFun={()=>toggleView()} />
       </div>
     );
   } else {
     return (
       <div className="selecteStrategyPage">
-        <SelectStrategy toggleFun={()=>toggleView()}  />
+        <SelectStrategy onStrategySelect={onStrategySelect} toggleFun={()=>toggleView()}  />
       </div>
     );
   }

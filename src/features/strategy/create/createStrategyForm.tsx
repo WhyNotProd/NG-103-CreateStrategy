@@ -26,7 +26,13 @@ const CreateStrategyForm = (props) => {
 							</div>
 							<div className="formRow">
 								<label htmlFor="strategyName">Strategy Name</label>
-								<input type="text" id="strategyName" name="strategyName" placeholder="Strategy Name" />
+								<input
+									type="text"
+									id="strategyName"
+									name="strategyName"
+									placeholder="Strategy Name"
+									defaultValue={props.strategy ? props.strategy.strategyName : ''}
+								/>
 							</div>
 							<div className="formRow">
 								<label htmlFor="strategyCapital">Starting Capital</label>
