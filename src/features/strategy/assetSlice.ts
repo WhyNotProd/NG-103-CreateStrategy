@@ -1,11 +1,5 @@
-import {
-  createEntityAdapter,
-  createSlice,
-  createAsyncThunk,
-  PayloadAction
-} from '@reduxjs/toolkit';
-import axios from 'axios';
-import {fetchAssetById, fetchAssets} from '../../api/assetApi';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { fetchAssets } from '../../api/assetApi';
 import { IAsset } from '../../interfaces/asset.interface';
 
   interface IAssetState {

@@ -1,16 +1,31 @@
-import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useEffect, useState } from 'react';
+import CreateStrategy from './createStrategyForm';
+import SelectStrategy from './selectStrategyForm';
 
-const CreateStrategy = () => {
-  const dispatch = useDispatch();
+const CreateStrategyForm = () => {
+  const [selectStrategyStatus, setStrategyStatus] = useState(false);
+  const [strategy, setStrategy] = useState(false);
+  const toggleView = () => {setStrategyStatus(!selectStrategyStatus)};
 
-  useEffect(() => {
-    // dispatch(getPosts());
-  }, [dispatch]);
+  const onStrategySelect = (data) => {
+      setStrategy(data);
+  };
 
-  return (
-    <div>Create Strategy Page</div>
-  );
+  // setSta
+  if (!selectStrategyStatus) {
+    return (
+      <div className="createStrategyPage">
+        <CreateStrategy strategy={strategy} toggleFun={()=>toggleView()} />
+      </div>
+    );
+  } else {
+    return (
+      <div className="selecteStrategyPage">
+        <SelectStrategy onStrategySelect={onStrategySelect} toggleFun={()=>toggleView()}  />
+      </div>
+    );
+  }
+
 };
 
-export default CreateStrategy;
+export default CreateStrategyForm;
